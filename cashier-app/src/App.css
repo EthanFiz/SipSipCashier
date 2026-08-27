@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-canvas: #d4e8d7;       /* Soft Mint Canvas */
+  --card-bg: #ffffff;         /* Clean White Base */
+  --brand-green: #0a5c36;     /* Vibrant Rich Green */
+  --bright-emerald: #148f54;  /* Accent Emerald */
+  --light-mint: #e2f4e5;      /* Light Mint Hover */
+  --border-color: #0a5c36;   /* Matching Border */
+  --text-muted: #2e6945;     /* Medium Green Subtext */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--brand-green);
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Title Header */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  color: var(--brand-green);
+}
+
+/* Card Container */
+.card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  box-shadow: 8px 8px 0px var(--brand-green);
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.items h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 6px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: var(--brand-green);
+}
+
+/* Cendol Row */
+.cendol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid var(--border-color);
+  padding: 12px 16px;
+  background: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.cendol:hover {
+  background: var(--light-mint);
+}
+
+.cendol p {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--brand-green);
+}
+
+/* QUANTITY CONTROLS (Fixes alignment & box-shadow issues) */
+.buttonGroup {
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 1.5px solid var(--border-color) !important;
+  background: #ffffff !important;
+  height: 36px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Force both + and - buttons to be dark green with white text */
+.buttonGroup button,
+.buttonGroup .button,
+.buttonGroup .add,
+.buttonGroup .min {
+  background-color: var(--brand-green) !important;
+  color: #ffffff !important;
+  border: none !important;
+  width: 34px !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  line-height: 1 !important;
+  outline: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.buttonGroup button:hover,
+.buttonGroup .button:hover,
+.buttonGroup .add:hover,
+.buttonGroup .min:hover {
+  background-color: var(--bright-emerald) !important;
+}
+
+/* Force input field inside quantity group */
+.buttonGroup input#ammount,
+.buttonGroup input.button {
+  width: 44px !important;
+  height: 100% !important;
+  border: none !important;
+  border-left: 1.5px solid var(--border-color) !important;
+  border-right: 1.5px solid var(--border-color) !important;
+  text-align: center !important;
+  font-family: 'Space Mono', monospace !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  color: var(--brand-green) !important;
+  background: #ffffff !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Total Display */
+.items h2 {
+  margin-top: 8px;
+  background-color: var(--brand-green);
+  color: #ffffff;
+  padding: 16px 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  display: flex;
+  justify-content: space-between;
+  border: 1.5px solid var(--border-color);
+}
+
+/* Payment Dropdown */
+.cendol select#metodeBayar {
+  margin-left: 12px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border-color);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.cendol select#metodeBayar:focus {
+  background-color: var(--light-mint);
+}
+
+/* Image Upload Section */
+#addFoto {
+  border: 1.5px dashed var(--border-color);
+  padding: 14px;
+  background: var(--light-mint);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#inputImage {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--brand-green);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Submit Button */
+.items button[type="button"]:last-child {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  background-color: #ffffff;
+  color: var(--brand-green);
+  border: 2px solid var(--border-color);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px var(--brand-green);
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.items button[type="button"]:last-child:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--brand-green);
+  background-color: var(--light-mint);
+}
+
+.items button[type="button"]:last-child:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--brand-green);
+}
+
+.items button[type="button"]:last-child:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
